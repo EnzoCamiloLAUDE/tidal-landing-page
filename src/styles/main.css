@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'VodafoneLt';
+    src: url('../assets/fonts/VodafoneLt-Regular.woff') format('woff')         
+}
+@font-face {
+    font-family: 'VodafoneRg';
+    src: url('../assets/fonts/VodafoneRg.woff') format('woff')         
+}
+body {
+    margin: 0;
+}
+.top-menu {
+    height: 102px;
+}
+.product-info {
+    height:  401px;
+    background-image: url('../assets/images/rectangle-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    .product-tidal-logo {
+        height: 74px;
+        width: 152px;
+        margin-top: 44px
+    }
+    .product-text-info {
+        display: inherit;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .product-announcement, .product-description, .product-promotion {
+            color: white;
+            margin-bottom: 10px;
+        }
+        .product-announcement {
+            font-family: 'VodafoneRg';
+            font-size: 44px;
+        }
+        .product-description, .product-promotion{
+            font-size: 30px;
+        }
+        .product-description{
+            font-family: 'VodafoneLt';
+        }
+        .product-promotion {
+            font-family: 'VodafoneRg';
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+    }
+    .product-activate-button{
+        width: 89px;
+        height: 45px;
+        margin-bottom: 50px;
+        background-color: #e60000;
+        border: none;
+        cursor: pointer;
+        .button-text{
+            font-family: 'VodafoneRg';
+            font-size: 19px;
+            color: white;
+        }
+    }
+
+}
+.breadcrumb {
+    height: 60px;
+    background-color: grey;
+}
+.content {
+    height: 739px;
+    background-color: rgb(41, 39, 39);
+}
