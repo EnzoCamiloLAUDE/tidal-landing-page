@@ -22,80 +22,121 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    .product-tidal-logo {
-        height: 74px;
-        width: 152px;
-        margin-top: 44px
-    }
-    .product-text-info {
-        display: inherit;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        .product-announcement, .product-description, .product-promotion {
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-        .product-announcement {
-            font-family: 'VodafoneRg';
-            font-size: 44px;
-        }
-        .product-description, .product-promotion{
-            font-size: 30px;
-        }
-        .product-description{
-            font-family: 'VodafoneLt';
-        }
-        .product-promotion {
-            font-family: 'VodafoneRg';
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-    }
-    .product-activate-button{
-        width: 89px;
-        height: 45px;
-        margin-bottom: 50px;
-        background-color: #e60000;
-        border: none;
-        cursor: pointer;
-        .button-text{
-            font-family: 'VodafoneRg';
-            font-size: 18px;
-            color: #ffffff;
-        }
-    }
-
+    
+}
+.product-tidal-logo {
+    height: 74px;
+    width: 152px;
+    margin-top: 44px
+}
+.product-text-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.product-announcement, .product-description, .product-promotion {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.product-announcement {
+    font-family: 'VodafoneRg';
+    font-size: 44px;
+}
+.product-description, .product-promotion{
+    font-size: 30px;
+}
+.product-description{
+    font-family: 'VodafoneLt';
+}
+.product-promotion {
+    font-family: 'VodafoneRg';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.product-activate-button{
+    width: 89px;
+    height: 45px;
+    margin-bottom: 50px;
+    background-color: #e60000;
+    border: none;
+    cursor: pointer;
+}
+.button-text{
+    font-family: 'VodafoneRg';
+    font-size: 18px;
+    color: #ffffff;
 }
 .breadcrumb {
     display: flex;
     align-items: center;
     height: 60px;
     background-color: #666;
-    .breadcrumb-content {
-        display: flex;
-        align-items: center;
-        margin-left: 71px;
-        .breadcrumb-link {
-            color: #fff;
-            font-family: 'VodafoneRg';
-            font-size: 16px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .breadcrumb-link:first-child {
-             text-decoration: underline;
-        }
-        .breadcrumb-chevron{
-            width: 15px;
-            height: 15px;
-            margin: 0px 11px;
-            filter: invert();
-        }
-    }
 }
-.content {
-    height: 739px;
-    background-color: rgb(41, 39, 39);
+.breadcrumb-content {
+    display: flex;
+    align-items: center;
+    margin-left: 71px;
+}
+.breadcrumb-link {
+    color: #fff;
+    font-family: 'VodafoneRg';
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.breadcrumb-link:first-child {
+     text-decoration: underline;
+}
+.breadcrumb-chevron{
+    width: 15px;
+    height: 15px;
+    margin: 0px 11px;
+    filter: invert();
+}
+.tidal-bottom-content {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 49.8px;
+}
+.bottom-title,.bottom-info-title {
+    font-family: 'VodafoneLt';
+    font-size: 36px;
+    color: #fff;
+}
+.cards-area{
+    height: 292px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 58px 0 54px 0;
+}
+.card{
+    width: 370px;
+    height: 292px;
+    border: solid 1px #999;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.card-info {
+    font-family: 'VodafoneRg';
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.card-description{
+    font-size: 16px;
 }
