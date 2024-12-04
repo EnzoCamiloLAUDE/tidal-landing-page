@@ -21,6 +21,9 @@ body {
 .font-vodafone-rg{
     font-family: 'VodafoneRg';
 }
+.font-bold{
+    font-weight: bold;
+}
 .top-menu {
     height: 102px;
 }
@@ -57,7 +60,6 @@ body {
     font-size: 1.87rem;
 }
 .product-promotion {
-    font-weight: bold;
     letter-spacing: 1px;
 }
 .product-activate-button{
@@ -106,7 +108,6 @@ body {
     font-size: 2.25rem;
 }
 .cards-area{
-    height: 55vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -131,8 +132,28 @@ body {
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 .card-description{
     font-size: 1rem;
+}
+.bottom-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.tidal-info-advantages{
+    display: flex;
+    justify-content: space-between;
+    gap: 11rem;
+    font-size: 1rem;
+    margin-bottom: 3rem
+}
+.right-advantages p, .left-advantages p {
+    position: relative;
+    padding-left: 28px;
+    background-image: url('../assets/icons/tick-or-solved@3x.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 21px 18px;
 }
