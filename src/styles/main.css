@@ -34,7 +34,7 @@ body {
         justify-content: center;
         flex-direction: column;
         .product-announcement, .product-description, .product-promotion {
-            color: white;
+            color: #ffffff;
             margin-bottom: 10px;
         }
         .product-announcement {
@@ -50,7 +50,7 @@ body {
         .product-promotion {
             font-family: 'VodafoneRg';
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
         }
     }
     .product-activate-button{
@@ -62,15 +62,38 @@ body {
         cursor: pointer;
         .button-text{
             font-family: 'VodafoneRg';
-            font-size: 19px;
-            color: white;
+            font-size: 18px;
+            color: #ffffff;
         }
     }
 
 }
 .breadcrumb {
+    display: flex;
+    align-items: center;
     height: 60px;
-    background-color: grey;
+    background-color: #666;
+    .breadcrumb-content {
+        display: flex;
+        align-items: center;
+        margin-left: 71px;
+        .breadcrumb-link {
+            color: #fff;
+            font-family: 'VodafoneRg';
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .breadcrumb-link:first-child {
+             text-decoration: underline;
+        }
+        .breadcrumb-chevron{
+            width: 15px;
+            height: 15px;
+            margin: 0px 11px;
+            filter: invert();
+        }
+    }
 }
 .content {
     height: 739px;
