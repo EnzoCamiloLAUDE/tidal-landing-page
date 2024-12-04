@@ -25,7 +25,7 @@ function renderCards() {
         cardElement.classList.add('card');
         cardElement.innerHTML = `
             <img src="${card.imageUrl}" alt="${card.title}" class="card-image">
-            <div class="card-info">
+            <div class="card-info color-white font-vodafone-rg">
                 <span class="card-title">${card.title}</span>
                 <span class="card-description">${card.description}</span>
             </div>
