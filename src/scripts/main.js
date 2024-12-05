@@ -46,7 +46,23 @@ function renderCards() {
         container.appendChild(cardElement);
     });
 }
-
+function carrouselCardsSwitch() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth !== previousWidth) {
+        previousWidth = windowWidth
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(()=>{
+            const resizeWindowWidth = window.innerWidth;
+            if (resizeWindowWidth > 768) {
+                if (document.querySelector('.carrousel')) removeCarrousel()
+                renderCards()
+            } else if (resizeWindowWidth <= 768) {
+                if (document.querySelectorAll('.card')) removeCards()
+                renderCarrousel()
+            }
+        },200)
+    }
+}
 function renderCarrousel() {
     const container = document.querySelector('.cards-carrousel-area');
     container.innerHTML = '';
@@ -96,6 +112,17 @@ function addCarrouselButtonsListener() {
             }
         });
     });
+    const sliderArea = document.querySelector('.carrousel-slider');
+    let startX = 0;
+    let endX = 0;
+    sliderArea.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+      sliderArea.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSlideTouch(startX, endX);
+      });
+    
     carrouselButtonListeners = true;
 }
 function carrouselSlideEffect(cardIndex){
@@ -114,6 +141,29 @@ function carrouselSlideEffect(cardIndex){
         card.style.transition = 'transform 0.5s ease-in-out';
     });
 }
+function handleSlideTouch(start, end) {
+    const diff = end - start;
+    const totalCards = cardsData.length
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+            if (carrouselCardIndex > 0) {
+                carrouselCardIndex-=1
+                carrouselSlideEffect(carrouselCardIndex);
+            }
+        } else {
+            if (carrouselCardIndex < totalCards-1) {
+                carrouselCardIndex+=1
+                carrouselSlideEffect(carrouselCardIndex);
+            }
+        }
+        const buttons = document.querySelectorAll('.carrousel-button');
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        const selectedButton = document.getElementById(`carrousel-button-${carrouselCardIndex}`); 
+        if (selectedButton) {
+            selectedButton.classList.add('selected');
+        }
+    }
+}
 function removeCards() {
     carrouselButtonListeners = false;
     const cardElements = document.querySelectorAll('.card');
@@ -126,24 +176,6 @@ function removeCarrousel() {
     const carrouselSlider = document.querySelector('.carrousel-slider');
     carrouselSlider.remove();
 
-}
-
-function carrouselCardsSwitch() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth !== previousWidth) {
-        previousWidth = windowWidth
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(()=>{
-            const resizeWindowWidth = window.innerWidth;
-            if (resizeWindowWidth > 768) {
-                if (document.querySelector('.carrousel')) removeCarrousel()
-                renderCards()
-            } else if (resizeWindowWidth <= 768) {
-                if (document.querySelectorAll('.card')) removeCards()
-                renderCarrousel()
-            }
-        },200)
-    }
 }
 
 document.addEventListener('DOMContentLoaded', renderContent);
