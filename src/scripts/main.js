@@ -68,9 +68,9 @@ function renderCarrousel() {
     carrouselButtons.classList.add('carrousel-buttons');
     carrouselButtons.innerHTML = `
         <div class="button-container">
-        <button class="carrousel-button selected" id="carrousel-button-0"></button>
-        <button class="carrousel-button" id="carrousel-button-1"></button>
-        <button class="carrousel-button" id="carrousel-button-2"></button>
+        <button class="carrousel-button selected" aria-label="Ir a la imagen 1" id="carrousel-button-0"></button>
+        <button class="carrousel-button" aria-label="Ir a la imagen 2" id="carrousel-button-1"></button>
+        <button class="carrousel-button" aria-label="Ir a la imagen 3" id="carrousel-button-2"></button>
         </div>
     `
     container.appendChild(carrouselCardElement);
