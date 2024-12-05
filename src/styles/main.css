@@ -106,28 +106,29 @@ body {
 }
 .bottom-title,.bottom-info-title {
     font-size: 2.25rem;
+    text-align: center;
 }
-.cards-area{
+.cards-carrousel-area{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 58px 0 54px 0;
 }
-.card{
-    width: 370px;
-    height: 292px;
+.card, .carrousel-card{
+    width: 29%;
     border: solid 1px #999;
     display: flex;
     flex-direction: column;
     margin-right: 10px;
+    cursor: pointer;
 }
 .card-info {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 29px 14px;
 }
 .card-title {
     font-size: 1.25rem;
@@ -140,14 +141,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    width: 100%;
 }
 .tidal-info-advantages{
     display: flex;
     justify-content: space-between;
     gap: 11rem;
     font-size: 1rem;
-    margin-bottom: 3rem
+    margin: 2vw 4vw;
 }
 .right-advantages p, .left-advantages p {
     position: relative;
@@ -157,3 +158,77 @@ body {
     background-position: left center;
     background-size: 21px 18px;
 }
+
+/* tablet styles */
+@media (max-width: 768px) {
+    body {
+      background-color: lightblue;
+      width: 100vw;
+    }
+    .top-menu {
+        height: 71px;
+    }
+    .product-tidal-logo{
+        width: 114px;
+        height: 55px;
+    }
+    .product-info{
+        height: 403px;
+    }
+    .product-announcement{
+        font-size: 2.25rem
+    }
+    .product-description, .product-promotion{
+        font-size: 1.625rem;
+        text-align: center;
+        width: 80%;
+    }
+    .breadcrumb{
+        display: none;
+    }
+    .bottom-title, .bottom-info-title{
+        font-size: 1.875rem;
+        width: 80%;
+    }
+    .tidal-info-advantages{
+        font-size: 1rem;
+        gap: 1rem;
+    }
+    .right-advantages,.left-advantages{
+        width: 20rem;
+        font-weight: normal;    
+    }
+    .right-advantages .font-bold, 
+    .left-advantages .font-bold {
+      font-weight: normal;
+    }
+    .carrousel-card{
+        width: 40%;
+    }
+    .cards-carrousel-area{
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .carrousel-button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0; 
+        border-radius: 50%;
+        background-color: #afafaf;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .carrousel-button.selected {
+        background-color: transparent;
+        border: 1.5px solid #fff;
+        transform: scale(1.4);
+    }
+  }
