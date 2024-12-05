@@ -64,6 +64,7 @@ function carrouselCardsSwitch() {
     }
 }
 function renderCarrousel() {
+    carrouselCardIndex = 0;
     const container = document.querySelector('.cards-carrousel-area');
     container.innerHTML = '';
     const currentCard = cardsData[carrouselCardIndex];
