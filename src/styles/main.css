@@ -24,6 +24,24 @@ html {
 .font-vodafone-rg{
     font-family: 'VodafoneRg';
 }
+.font-xl {
+    font-size: 2.75rem;
+}
+.font-lg {
+    font-size: 2.25rem;
+}
+.font-md {
+    font-size: 1.875rem;
+}
+.font-sm {
+    font-size: 1.25rem;
+}
+.font-xs {
+    font-size: 1rem;
+}
+.font-18 {
+    font-size: 1.125rem;
+}
 .font-bold{
     font-weight: bold;
 }
@@ -55,12 +73,7 @@ html {
 }
 .product-announcement, .product-description, .product-promotion {
     margin-bottom: 10px;
-}
-.product-announcement {
-    font-size: 2.75rem;
-}
-.product-description, .product-promotion{
-    font-size: 1.87rem;
+    text-align: center;
 }
 .product-promotion {
     letter-spacing: 1px;
@@ -72,9 +85,6 @@ html {
     background-color: #e60000;
     border: none;
     cursor: pointer;
-}
-.button-text{
-    font-size: 1.1rem;
 }
 .breadcrumb {
     display: flex;
@@ -88,7 +98,6 @@ html {
     margin-left: 70px;
 }
 .breadcrumb-link {
-    font-size: 1rem;
     text-decoration: none;
     cursor: pointer;
 }
@@ -108,7 +117,6 @@ html {
     padding-top: 49.8px;
 }
 .bottom-title,.bottom-info-title {
-    font-size: 2.25rem;
     text-align: center;
 }
 .cards-carrousel-area{
@@ -134,11 +142,7 @@ html {
     padding: 29px 14px;
 }
 .card-title {
-    font-size: 1.25rem;
     margin-bottom: 10px;
-}
-.card-description{
-    font-size: 1rem;
 }
 .bottom-info{
     display: flex;
@@ -150,7 +154,6 @@ html {
     display: flex;
     justify-content: space-between;
     gap: 11rem;
-    font-size: 1rem;
     margin: 2vw 4vw;
 }
 .right-advantages p, .left-advantages p {
@@ -164,9 +167,23 @@ html {
 
 /* tablet styles */
 @media (max-width: 768px) {
-    body {
-      background-color: lightblue;
-      width: 100vw;
+    .font-xl {
+        font-size: 2.25rem;
+    }
+    .font-lg {
+        font-size: 1.875rem; 
+    }
+    .font-md {
+        font-size: 1.625rem;
+    }
+    .font-sm {
+        font-size: 1.125rem;
+    }
+    .font-xs {
+        font-size: 1rem;
+    }
+    .font-18 {
+        font-size: 1.125rem;
     }
     .top-menu {
         height: 71px;
@@ -178,26 +195,19 @@ html {
     .product-info{
         height: 403px;
     }
-    .product-announcement{
-        font-size: 2.25rem
-    }
     .product-activate-button{
         margin-bottom: 6.8%;
     }
     .product-description, .product-promotion{
-        font-size: 1.625rem;
-        text-align: center;
         width: 80%;
     }
     .breadcrumb{
         display: none;
     }
     .bottom-title, .bottom-info-title{
-        font-size: 1.875rem;
         width: 80%;
     }
     .tidal-info-advantages{
-        font-size: 1rem;
         gap: 1rem;
     }
     .right-advantages,.left-advantages{
@@ -245,5 +255,41 @@ html {
         background-color: transparent;
         border: 1.5px solid #fff;
         transform: scale(1.4);
+    }
+  }
+
+  @media (max-width: 320px) {
+    .top-menu {
+        height: 39px
+    }
+    .font-xl {
+        font-size: 1.875rem;
+    }
+    .font-lg {
+        font-size: 1.625rem;
+    }
+    .font-md {
+        font-size: 1.25rem;
+    }
+    .product-description{
+        width: 90%;
+    }
+    .product-tidal-logo{
+        margin-top: 10%;
+    }
+    .product-activate-button{
+        width: 90%;
+        height: 34px;
+        margin-bottom: 15%;
+    }
+    .bottom-title, .bottom-info-title, .tidal-info-advantages{
+        width: 90%;
+    }
+    .tidal-info-advantages{
+        flex-direction: column;
+        gap: 0;
+    }
+    .left-advantages, .right-advantages{
+        width: 95%;
     }
   }
