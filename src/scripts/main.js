@@ -76,7 +76,6 @@ function renderCarrousel() {
     container.appendChild(carrouselCardElement);
     container.appendChild(carrouselButtons);
     if (!carrouselButtonListeners) {
-        console.log('add listener');
         addCarrouselButtonsListener()
     }
 
@@ -99,9 +98,15 @@ function addCarrouselButtonsListener() {
 function carrouselSlideEffect(cardIndex){
     const cards = document.querySelectorAll('.card');
     let offset
-    cards.forEach((card, index) => {
-        cardIndex == 0 ? offset = 53 :
-        cardIndex == 1 ? offset = 0 : offset = -50
+    let offsetValues
+    const innerWidth = window.innerWidth;
+    if (innerWidth <= 320) {
+        offsetValues = [85, 2, -82];
+      } else if (innerWidth <= 768) {
+        offsetValues = [53, 0, -50];
+    }
+    offset = offsetValues[cardIndex]
+    cards.forEach((card) => {
         card.style.transform = `translateX(${offset}vw)`;
         card.style.transition = 'transform 0.5s ease-in-out';
     });
