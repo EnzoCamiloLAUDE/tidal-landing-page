@@ -6,11 +6,14 @@
     font-family: 'VodafoneRg';
     src: url('../assets/fonts/VodafoneRg.woff') format('woff')         
 }
+html,body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
 html {
     font-size: 100%;
-}
-body {
-    margin: 0;
 }
 .color-white {
     color: #fff
@@ -178,6 +181,9 @@ body {
     .product-announcement{
         font-size: 2.25rem
     }
+    .product-activate-button{
+        margin-bottom: 6.8%;
+    }
     .product-description, .product-promotion{
         font-size: 1.625rem;
         text-align: center;
@@ -202,12 +208,21 @@ body {
     .left-advantages .font-bold {
       font-weight: normal;
     }
-    .carrousel-card{
-        width: 40%;
-    }
     .cards-carrousel-area{
         flex-direction: column;
         align-items: center;
+    }
+    .carrousel-slider {
+        display: flex;
+        flex-direction: row !important;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        justify-content: center;        
+    }
+    .card {
+        width: 100%;
+        transform: translateX(53vw);
     }
     .button-container {
         display: flex;
