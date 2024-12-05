@@ -57,18 +57,15 @@ function carrouselCardsSwitch() {
     const windowWidth = window.innerWidth;
     if (windowWidth !== previousWidth) {
         previousWidth = windowWidth
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(()=>{
-            const resizeWindowWidth = window.innerWidth;
-            if (resizeWindowWidth > 768 && carrouselRendered == true) {
-                if (document.querySelector('.carrousel-slider')) removeCarrousel()
-                renderCards()
-                
-            } else if (resizeWindowWidth <= 768 && carrouselRendered == false) {
-                if (document.querySelectorAll('.card')) removeCards()
-                renderCarrousel()
-            }
-        },200)
+        const resizeWindowWidth = window.innerWidth;
+        if (resizeWindowWidth > 768 && carrouselRendered == true) {
+            if (document.querySelector('.carrousel-slider')) removeCarrousel()
+            renderCards()
+            
+        } else if (resizeWindowWidth <= 768 && carrouselRendered == false) {
+            if (document.querySelectorAll('.card')) removeCards()
+            renderCarrousel()
+        }        
     }
 }
 function renderCarrousel() {
