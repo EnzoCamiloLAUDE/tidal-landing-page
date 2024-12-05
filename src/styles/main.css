@@ -107,7 +107,6 @@ html {
 .breadcrumb-chevron{
     height: 1rem;
     margin: 0 11%;
-    filter: invert();
 }
 .tidal-bottom-content {
     background-color: #333;
@@ -257,6 +256,7 @@ html {
         transform: scale(1.4);
     }
   }
+  /* mobile view */
   @media (max-width: 320px) {
     .top-menu {
         height: 39px
@@ -280,6 +280,10 @@ html {
         width: 90%;
         height: 34px;
         margin-bottom: 15%;
+    }
+    .card {
+        width: 80%;
+        transform: translateX(85vw);
     }
     .bottom-title, .bottom-info-title, .tidal-info-advantages{
         width: 90%;
