@@ -214,7 +214,6 @@ body {
     }
     .right-advantages,.left-advantages{
         width: 20rem;
-        font-weight: normal;    
     }
     .right-advantages .font-bold, 
     .left-advantages .font-bold {
@@ -299,5 +298,9 @@ body {
     }
     .left-advantages, .right-advantages{
         width: 95%;
+    }
+    .right-advantages .font-bold, 
+    .left-advantages .font-bold {
+      font-weight: bold;
     }
   }
