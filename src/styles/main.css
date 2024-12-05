@@ -233,8 +233,8 @@ body {
         justify-content: center;        
     }
     .card {
-        width: 100%;
-        transform: translateX(50vw);
+        width: 80%;
+        transform: translateX(100%);
     }
     .button-container {
         display: flex;
@@ -257,6 +257,12 @@ body {
         background-color: transparent;
         border: 1.5px solid #fff;
         transform: scale(1.4);
+    }
+  }
+  @media (max-width: 690px) {
+    .tidal-info-advantages{
+        flex-direction: column;
+        gap: 0;
     }
   }
   /* mobile view */
@@ -283,10 +289,6 @@ body {
         width: 90%;
         height: 34px;
         margin-bottom: 15%;
-    }
-    .card {
-        width: 80%;
-        transform: translateX(85vw);
     }
     .bottom-title, .bottom-info-title, .tidal-info-advantages{
         width: 90%;

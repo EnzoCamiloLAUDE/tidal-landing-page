@@ -130,14 +130,10 @@ function carrouselSlideEffect(cardIndex){
     let offset
     let offsetValues
     const innerWidth = window.innerWidth;
-    if (innerWidth <= 320) {
-        offsetValues = [85, 2, -82];
-      } else if (innerWidth <= 768) {
-        offsetValues = [50, 0, -50];
-    }
+        offsetValues = [100, 0, -100];
     offset = offsetValues[cardIndex]
     cards.forEach((card) => {
-        card.style.transform = `translateX(${offset}vw)`;
+        card.style.transform = `translateX(${offset}%)`;
         card.style.transition = 'transform 0.5s ease-in-out';
     });
 }
