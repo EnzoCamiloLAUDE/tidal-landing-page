@@ -36,8 +36,8 @@ function renderCards() {
         cardElement.innerHTML = `
             <img src="${card.imageUrl}" alt="${card.title}" class="card-image">
             <div class="card-info color-white font-vodafone-rg">
-                <span class="card-title font-bold">${card.title}</span>
-                <span class="card-description">${card.description}</span>
+                <span class="card-title font-bold font-sm">${card.title}</span>
+                <span class="card-description font-xs">${card.description}</span>
             </div>
         `;
         container.appendChild(cardElement);
@@ -57,8 +57,8 @@ function renderCarrousel() {
         cardElement.innerHTML = `
             <img src="${card.imageUrl}" alt="${card.title}" class="card-image">
             <div class="card-info color-white font-vodafone-rg">
-                <span class="card-title font-bold">${card.title}</span>
-                <span class="card-description">${card.description}</span>
+                <span class="card-title font-bold font-sm">${card.title}</span>
+                <span class="card-description font-xs">${card.description}</span>
             </div>
         `;
         carrouselSlider.appendChild(cardElement);
