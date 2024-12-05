@@ -42,7 +42,7 @@ body {
 .font-xs {
     font-size: 1rem;
 }
-.font-18 {
+.font-button-sm {
     font-size: 1.125rem;
 }
 .font-bold{
@@ -184,7 +184,7 @@ body {
     .font-xs {
         font-size: 1rem;
     }
-    .font-18 {
+    .font-button-sm {
         font-size: 1.125rem;
     }
     .top-menu {
