@@ -2,17 +2,20 @@ const cardsData = [
     {
         title:"Estrenos en Exclusiva",
         description:"TIDAL ha estrenado en exclusiva los mejores álbumes de los dos últimos años y siempre con la mejor calidad de sonido.",
-        imageUrl:"./assets/images/cards/card-1.png"
+        imageUrl:"./assets/images/cards/card-1.png",
+        altText: "Hombre posando en un campo, con una camisa de colores y pulseras de colores, descansando con la cabeza apoyada en la mano."
     },
     {
         title:"El mejor contenido audiovisual",
         description:"Más de 200 mil videos musicales en alta definición, streaming de conciertos  en directo y series originales.",
-        imageUrl:"./assets/images/cards/card-2.png"
+        imageUrl:"./assets/images/cards/card-2.png",
+        altText: "Vista previa de un video con un hombre mirando hacia atrás, con el icono de reproducción en el centro."
     },
     {
         title:"Mucho más que música",
         description:"Recomendaciones de conciertos según tus gustos y localización geográfica. Gana entradas para tus conciertos preferidos.",
-        imageUrl:"./assets/images/cards/card-3.png"
+        imageUrl:"./assets/images/cards/card-3.png",
+        altText: "Personas levantando las manos en un concierto o evento, con teléfonos móviles en sus manos."
     },
 ]
 let debounceTimeout;
@@ -34,7 +37,7 @@ function renderCards() {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
         cardElement.innerHTML = `
-            <img src="${card.imageUrl}" alt="${card.title}" class="card-image">
+            <img src="${card.imageUrl}" title="${card.title}" alt="${card.altText}" class="card-image">
             <div class="card-info color-white font-vodafone-rg">
                 <span class="card-title font-bold font-sm">${card.title}</span>
                 <span class="card-description font-xs">${card.description}</span>
