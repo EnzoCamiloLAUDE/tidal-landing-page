@@ -15,6 +15,9 @@ html,body {
 html {
     font-size: 100%;
 }
+body {
+    font-family: Arial, sans-serif;
+}
 .color-white {
     color: #fff
 }
