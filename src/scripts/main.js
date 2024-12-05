@@ -98,7 +98,6 @@ function renderCarrousel() {
     if (!carrouselButtonListeners) {
         addCarrouselButtonsListener()
     }
-
 }
 function addCarrouselButtonsListener() {
     const buttons = document.querySelectorAll('.carrousel-button');
@@ -178,6 +177,5 @@ function removeCarrousel() {
     carrouselSlider.remove();
 
 }
-
 document.addEventListener('DOMContentLoaded', renderContent);
 window.addEventListener('resize', carrouselCardsSwitch);
