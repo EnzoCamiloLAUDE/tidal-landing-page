@@ -231,7 +231,7 @@ html {
     }
     .card {
         width: 100%;
-        transform: translateX(53vw);
+        transform: translateX(50vw);
     }
     .button-container {
         display: flex;

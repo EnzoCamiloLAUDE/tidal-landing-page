@@ -133,7 +133,7 @@ function carrouselSlideEffect(cardIndex){
     if (innerWidth <= 320) {
         offsetValues = [85, 2, -82];
       } else if (innerWidth <= 768) {
-        offsetValues = [53, 0, -50];
+        offsetValues = [50, 0, -50];
     }
     offset = offsetValues[cardIndex]
     cards.forEach((card) => {
