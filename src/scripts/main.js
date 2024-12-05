@@ -22,12 +22,18 @@ let debounceTimeout;
 let previousWidth = window.innerWidth;
 let carrouselCardIndex = 0;
 let carrouselButtonListeners = false;
+let cardsRendered
+let carrouselRendered
 function renderContent() {
     const windowWidth = window.innerWidth;
     if (windowWidth > 768) {
+        cardsRendered = true;
+        carrouselRendered = false
         renderCards()
     } else if (windowWidth <= 768) {
         renderCarrousel()
+        carrouselRendered = true;
+        cardsRendered = false
     }
 }
 function renderCards() {
@@ -45,6 +51,7 @@ function renderCards() {
         `;
         container.appendChild(cardElement);
     });
+    cardsRendered = true;
 }
 function carrouselCardsSwitch() {
     const windowWidth = window.innerWidth;
@@ -53,10 +60,11 @@ function carrouselCardsSwitch() {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(()=>{
             const resizeWindowWidth = window.innerWidth;
-            if (resizeWindowWidth > 768) {
-                if (document.querySelector('.carrousel')) removeCarrousel()
+            if (resizeWindowWidth > 768 && carrouselRendered == true) {
+                if (document.querySelector('.carrousel-slider')) removeCarrousel()
                 renderCards()
-            } else if (resizeWindowWidth <= 768) {
+                
+            } else if (resizeWindowWidth <= 768 && carrouselRendered == false) {
                 if (document.querySelectorAll('.card')) removeCards()
                 renderCarrousel()
             }
@@ -64,7 +72,6 @@ function carrouselCardsSwitch() {
     }
 }
 function renderCarrousel() {
-    carrouselCardIndex = 0;
     const container = document.querySelector('.cards-carrousel-area');
     container.innerHTML = '';
     const currentCard = cardsData[carrouselCardIndex];
@@ -88,13 +95,15 @@ function renderCarrousel() {
     carrouselButtons.classList.add('carrousel-buttons');
     carrouselButtons.innerHTML = `
         <div class="button-container">
-        <button class="carrousel-button selected" aria-label="Ir a la imagen 1" id="carrousel-button-0"></button>
+        <button class="carrousel-button" aria-label="Ir a la imagen 1" id="carrousel-button-0"></button>
         <button class="carrousel-button" aria-label="Ir a la imagen 2" id="carrousel-button-1"></button>
         <button class="carrousel-button" aria-label="Ir a la imagen 3" id="carrousel-button-2"></button>
         </div>
     `
     container.appendChild(carrouselCardElement);
     container.appendChild(carrouselButtons);
+    carrouselRendered = true;
+    setButtonSelected()
     if (!carrouselButtonListeners) {
         addCarrouselButtonsListener()
     }
@@ -152,16 +161,20 @@ function handleSlideTouch(start, end) {
                 carrouselSlideEffect(carrouselCardIndex);
             }
         }
-        const buttons = document.querySelectorAll('.carrousel-button');
-        buttons.forEach(btn => btn.classList.remove('selected'));
-        const selectedButton = document.getElementById(`carrousel-button-${carrouselCardIndex}`); 
-        if (selectedButton) {
-            selectedButton.classList.add('selected');
-        }
+        setButtonSelected()
+    }
+}
+function setButtonSelected() {
+    const buttons = document.querySelectorAll('.carrousel-button');
+    buttons.forEach(btn => btn.classList.remove('selected'));
+    const selectedButton = document.getElementById(`carrousel-button-${carrouselCardIndex}`); 
+    if (selectedButton) {
+        selectedButton.classList.add('selected');
     }
 }
 function removeCards() {
     carrouselButtonListeners = false;
+    cardsRendered = false;
     const cardElements = document.querySelectorAll('.card');
     cardElements.forEach(cardElement => {
         cardElement.remove();
@@ -169,6 +182,8 @@ function removeCards() {
 }
 function removeCarrousel() {
     carrouselButtonListeners = false;
+    carrouselRendered = false;
+    carrouselCardIndex = 0;
     const carrouselSlider = document.querySelector('.carrousel-slider');
     carrouselSlider.remove();
 
